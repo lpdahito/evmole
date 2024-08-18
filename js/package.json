@@ -2,19 +2,18 @@
   "name": "evmole",
   "version": "0.3.7",
   "description": "Extracts function selectors and arguments from EVM bytecode",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "unpkg": "dist/index.iife.js",
   "jsdelivr": "dist/index.iife.js",
-  "type": "module",
   "exports": {
-    "import": "./dist/index.esm.js",
-    "require": "./dist/index.cjs.js"
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.cjs"
   },
   "scripts": {
-    "build-cjs": "npx esbuild ./src/ --bundle --minify --sourcemap --format=cjs --outfile=dist/index.cjs.js",
-    "build-esm": "npx esbuild ./src/ --bundle --minify --sourcemap --format=esm --outfile=dist/index.esm.js",
+    "build-cjs": "npx esbuild ./src/ --bundle --minify --sourcemap --format=cjs --outfile=dist/index.cjs",
+    "build-esm": "npx esbuild ./src/ --bundle --minify --sourcemap --format=esm --outfile=dist/index.mjs",
     "build-iife": "npx esbuild ./src/ --bundle --minify --sourcemap --format=iife --global-name=evmole --outfile=dist/index.iife.js",
     "build": "rm -rf dist/ && npm run build-cjs && npm run build-esm && npm run build-iife && cp ./src/index.d.ts dist/",
     "lint": "npx eslint ./src/",
