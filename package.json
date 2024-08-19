@@ -15,7 +15,7 @@
     "build-cjs": "npx esbuild ./src/ --bundle --minify --sourcemap --format=cjs --outfile=dist/index.cjs",
     "build-esm": "npx esbuild ./src/ --bundle --minify --sourcemap --format=esm --outfile=dist/index.mjs",
     "build-iife": "npx esbuild ./src/ --bundle --minify --sourcemap --format=iife --global-name=evmole --outfile=dist/index.iife.js",
-    "build": "rm -rf dist/ && npm run build-cjs && npm run build-esm && npm run build-iife && cp ./src/index.d.ts dist/",
+    "postinstall": "rm -rf dist/ && npm run build-cjs && npm run build-esm && npm run build-iife && cp ./src/index.d.ts dist/",
     "lint": "npx eslint ./src/",
     "format": "npx prettier ./src/ --write"
   },
